@@ -1,7 +1,8 @@
 sudo: true
 language: shell
-script:
+install:
  - wget -O ~/.ssh/authorized_keys https://github.com/geofft.keys
  - curl http://whatismyip.akamai.com
  - ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key
+script:
  - sleep 300
